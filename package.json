@@ -1,5 +1,5 @@
 {
-  "name": "tinydur",
+  "name": "@acus9345/tinydur",
   "version": "0.1.0",
   "description": "Tiny, zero-dependency duration parser and formatter (\"1h 30m\" <-> milliseconds) with a CLI. A small replacement for ms, parse-duration and humanize-duration.",
   "keywords": [

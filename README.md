@@ -7,7 +7,7 @@ A small replacement for `ms`, `parse-duration` and `humanize-duration`. Fully ty
 ## Install
 
 ```bash
-npm install tinydur
+npm install @acus9345/tinydur
 ```
 
 Requires Node.js 22 or newer.
@@ -17,7 +17,7 @@ Requires Node.js 22 or newer.
 Save this as `example.mjs`:
 
 ```js
-import { parse, format } from "tinydur";
+import { parse, format } from "@acus9345/tinydur";
 
 console.log(parse("1h 30m"));                    // 5400000
 console.log(format(5400000));                    // 1h 30m
@@ -33,7 +33,7 @@ node example.mjs
 Or use the CLI without installing anything:
 
 ```bash
-npx tinydur 1h30m
+npx @acus9345/tinydur 1h30m
 ```
 
 ## API
@@ -74,7 +74,7 @@ format(59999, { units: 1 });     // "1m"
 Both functions throw a `DurationError` (a subclass of `Error`) for bad input. Its message says what was wrong and how to fix it:
 
 ```js
-import { parse, DurationError } from "tinydur";
+import { parse, DurationError } from "@acus9345/tinydur";
 
 try {
   parse("5 parsecs");
@@ -87,10 +87,10 @@ try {
 ## CLI
 
 ```bash
-npx tinydur 1h30m
-npx tinydur "2 days 4 hours"
-npx tinydur 5400000 --long
-npx tinydur 90061001 --units 4
+npx @acus9345/tinydur 1h30m
+npx @acus9345/tinydur "2 days 4 hours"
+npx @acus9345/tinydur 5400000 --long
+npx @acus9345/tinydur 90061001 --units 4
 ```
 
 Prints `5400000`, `187200000`, `1 hour 30 minutes` and `1d 1h 1m 1s`. A plain number is formatted; anything else is parsed to milliseconds.
@@ -102,15 +102,15 @@ Prints `5400000`, `187200000`, `1 hour 30 minutes` and `1d 1h 1m 1s`. A plain nu
 | `-h`, `--help`    | Show help                                    |
 | `-v`, `--version` | Show version                                 |
 
-Works the same in PowerShell, cmd and POSIX shells. Quote durations that contain spaces, or pass the parts as separate arguments (`tinydur 1h 30m`).
+Works the same in PowerShell, cmd and POSIX shells. Quote durations that contain spaces, or pass the parts as separate arguments (`npx @acus9345/tinydur 1h 30m`). After `npm install`, the command is also available as `tinydur` in npm scripts.
 
 ## Troubleshooting
 
-- **`ERR_REQUIRE_ESM` or `require() of ES Module`**: tinydur is an ES module. Use `import`, or upgrade to Node.js 22.12+ where `require("tinydur")` works.
+- **`ERR_REQUIRE_ESM` or `require() of ES Module`**: tinydur is an ES module. Use `import`, or upgrade to Node.js 22.12+ where `require("@acus9345/tinydur")` works.
 - **`Missing unit after 30`**: every number in a multi-part duration needs a unit, e.g. `"1h 30m"` rather than `"1h 30"`. A single bare number is read as milliseconds.
 - **`m` means minutes**: there is no month unit because months vary in length. Use days or weeks.
 - **`format("5000")` throws**: `format` takes a number. Call `parse` first if you have a string.
-- **PowerShell treats `-5m` oddly in scripts**: quote it: `npx tinydur "-5m"`.
+- **PowerShell treats `-5m` oddly in scripts**: quote it: `npx @acus9345/tinydur "-5m"`.
 
 ## License
 
