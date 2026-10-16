@@ -1,0 +1,56 @@
+{
+  "name": "tinydur",
+  "version": "0.1.0",
+  "description": "Tiny, zero-dependency duration parser and formatter (\"1h 30m\" <-> milliseconds) with a CLI. A small replacement for ms, parse-duration and humanize-duration.",
+  "keywords": [
+    "duration",
+    "time",
+    "ms",
+    "milliseconds",
+    "parse",
+    "format",
+    "humanize",
+    "cli"
+  ],
+  "homepage": "https://github.com/acus9345/tinydur#readme",
+  "bugs": {
+    "url": "https://github.com/acus9345/tinydur/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acus9345/tinydur.git"
+  },
+  "license": "MIT",
+  "author": "acus9345 <acus9345@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "tinydur": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  }
+}
