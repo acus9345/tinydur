@@ -1,7 +1,7 @@
 {
   "name": "@acus9345/tinydur",
-  "version": "0.1.0",
-  "description": "Tiny, zero-dependency duration parser and formatter (\"1h 30m\" <-> milliseconds) with a CLI. A small replacement for ms, parse-duration and humanize-duration.",
+  "version": "0.2.0",
+  "description": "Tiny, zero-dependency duration and byte-size parser and formatter (\"1h 30m\" <-> milliseconds, \"20MB\" <-> bytes) with a CLI. A small replacement for ms, parse-duration, humanize-duration, bytes and pretty-bytes.",
   "keywords": [
     "duration",
     "time",
@@ -10,7 +10,13 @@
     "parse",
     "format",
     "humanize",
-    "cli"
+    "cli",
+    "bytes",
+    "filesize",
+    "size",
+    "pretty-bytes",
+    "kib",
+    "mib"
   ],
   "homepage": "https://github.com/acus9345/tinydur#readme",
   "bugs": {

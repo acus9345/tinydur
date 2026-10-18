@@ -1,13 +1,18 @@
 /**
- * tinydur: tiny, zero-dependency duration parsing and formatting.
+ * tinydur: tiny, zero-dependency duration and byte-size parsing and formatting.
  *
  * @example
- * import { parse, format } from "tinydur";
- * parse("1h 30m");   // 5400000
- * format(5400000);   // "1h 30m"
+ * import { parse, format, parseBytes, formatBytes } from "@acus9345/tinydur";
+ * parse("1h 30m");          // 5400000
+ * format(5400000);          // "1h 30m"
+ * parseBytes("20MB");       // 20000000
+ * formatBytes(20000000);    // "20 MB"
  *
  * @packageDocumentation
  */
+
+export { ByteSizeError, formatBytes, parseBytes } from "./bytes.js";
+export type { FormatBytesOptions, ParseBytesOptions } from "./bytes.js";
 
 /** Thrown for invalid durations or options. The message says what went wrong and how to fix it. */
 export class DurationError extends Error {
